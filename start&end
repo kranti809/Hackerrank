@@ -1,0 +1,11 @@
+import re
+
+s = input()
+v = input()
+
+for i,x in enumerate(s): #enumerate is return an iterator that adds a counter to each element 
+    if re.match(v,s[i:]):
+        print ((i,i+len(v)-1))
+
+if re.search(v,s)==None:
+    print((-1,-1))
