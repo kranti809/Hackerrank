@@ -1,0 +1,4 @@
+import re
+
+i = re.findall(r'([a-zA-Z0-9])\1+', input())
+print(i[0] if i else -1)
