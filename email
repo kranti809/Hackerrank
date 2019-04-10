@@ -1,0 +1,11 @@
+import re
+import email.utils
+
+pattern = r'[a-zA-Z](\w|-|\.)*@[a-zA-Z]*\.[a-zA-Z]{0,3}$'
+
+Email = input()
+
+for i in range (int(Email)):
+    email_id = email.utils.parseaddr(input())
+    if re.match(pattern, email_id[1]):
+        print(email.utils.formataddr(email_id))
