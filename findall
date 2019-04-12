@@ -1,0 +1,5 @@
+import re
+c = '[qwrtypsdfghjklzxcvbnm]'
+a = re.findall('(?<=' + c +')([aeiou]{2,})' +c, input(), re.I)
+
+print('\n'.join(a or ['-1']))
