@@ -1,0 +1,13 @@
+from html.parser import HTMLParser
+import requests
+
+r = requests.get("https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html")
+m = r.text
+
+class MyHTMLParser(HTMLParser):
+    
+      def handle_data(self, data):
+        print(data)
+
+parser = MyHTMLParser()
+parser.feed(m)
