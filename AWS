@@ -1,0 +1,15 @@
+from bs4 import BeautifulSoup
+import requests
+
+
+source = requests.get("https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html").text
+soup = BeautifulSoup(source,'lxml')
+
+title = soup.h1.string
+print(title)
+
+summery = soup.p.text
+print(summery)
+
+sub = soup.find('li').p.text
+print(sub)
